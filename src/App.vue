@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="row">
-      <div class="column">
+      <div class="sidebar">
         <Dialog :selected="selected" :node="node" @deselect="deselect"></Dialog>
       </div>
-      <div class="column">
+      <div class="main">
         <Tree v-if="root !== null" :root="root" :selectedNode="node" @select-node="selectNode"></Tree>
       </div>
     </div>
@@ -66,9 +66,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.column {
+.sidebar {
   float: left;
-  width: 50%;
+  width: 20%;
+}
+.main {
+  float: left;
 }
 .row:after {
   content: "";
