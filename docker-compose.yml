@@ -1,0 +1,18 @@
+version: "3.2"
+
+services:
+    mongo:
+        image: mongo:4
+        deploy:
+            restart_policy:
+                condition: on-failure
+        ports:
+            - 27017:27017
+        volumes:
+            - abn:/data/db
+        environment:
+            - MONGO_INITDB_DATABASE=abn
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=EAmiGHTAtOINgErP
+volumes:
+    abn:
