@@ -22,12 +22,12 @@ export default {
       required: true
     },
     selectedNode: {
-      type: Object,
+      type: Object
     }
   },
   methods: {
     selectNode: function(node) {
-      this.$emit("select-node", node);
+      this.$store.commit("selectNode", node);
     }
   },
   computed: {

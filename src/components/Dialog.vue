@@ -1,40 +1,40 @@
 <template>
   <div v-if="selected" class="dialog">
-    <a @click="deselect">
-      <img class="cancel topright" src="../assets/cancel.png" />
-    </a>
-    <h>{{node.name}}</h>
-    <p>{{node.description}}</p>
+    <DialogCancel class="cancel" />
+    <DialogHead />
+    <DialogContent />
   </div>
 </template>
 
 <script>
+import DialogCancel from "./DialogCancel";
+import DialogHead from "./DialogHead";
+import DialogContent from "./DialogContent";
+
 export default {
   name: "Dialog",
-  props: {
-    selected: Boolean,
-    node: Object
+  components: {
+    DialogCancel,
+    DialogHead,
+    DialogContent
   },
-  methods: {
-    deselect: function() {
-      this.$emit("deselect");
+  computed: {
+    selected() {
+      return this.$store.state.selected;
     }
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .dialog {
   border-style: solid;
   border-radius: 5px;
-  transition: 0.3s;
-  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   position: relative;
 }
 .cancel {
-  display: block;
-  height: 12px;
-  width: 12px;
   position: absolute;
   top: 5px;
   right: 5px;

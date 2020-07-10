@@ -1,7 +1,7 @@
 <template>
   <div class="tf-tree">
     <ul>
-      <Node :node="root" :selectedNode="selectedNode" @select-node="selectNode"></Node>
+      <Node :node="root" :selectedNode="selectedNode"></Node>
     </ul>
   </div>
 </template>
@@ -13,16 +13,10 @@ export default {
   name: "Tree",
   props: {
     root: {
-      type: Object,
-      required: true
+      type: Object
     },
     selectedNode: {
-      type: Object,
-    }
-  },
-  methods: {
-    selectNode: function(node) {
-      this.$emit("select-node", node);
+      type: Object
     }
   },
   components: {
