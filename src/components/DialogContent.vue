@@ -1,14 +1,13 @@
 <template>
-  <p>{{content}}</p>
+  <p>{{description}}</p>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "DialogContent",
   computed: {
-    content() {
-      return this.$store.state.selectedNode.description;
-    }
+    ...mapGetters(["description"])
   }
 };
 </script>

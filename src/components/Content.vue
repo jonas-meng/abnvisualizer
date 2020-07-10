@@ -6,6 +6,7 @@
 
 <script>
 import Tree from "./Tree";
+import { mapGetters } from "vuex";
 
 export default {
   name: "App",
@@ -13,12 +14,7 @@ export default {
     Tree
   },
   computed: {
-    root() {
-      return this.$store.state.root;
-    },
-    selectedNode() {
-      return this.$store.state.selectedNode;
-    }
+    ...mapGetters(["root", "selectedNode"])
   }
 };
 </script>

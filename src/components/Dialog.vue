@@ -10,6 +10,7 @@
 import DialogCancel from "./DialogCancel";
 import DialogHead from "./DialogHead";
 import DialogContent from "./DialogContent";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Dialog",
@@ -19,9 +20,7 @@ export default {
     DialogContent
   },
   computed: {
-    selected() {
-      return this.$store.state.selected;
-    }
+    ...mapGetters(["selected"])
   }
 };
 </script>

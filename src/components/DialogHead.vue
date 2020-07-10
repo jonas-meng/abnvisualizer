@@ -1,14 +1,13 @@
 <template>
-  <h3>{{head}}</h3>
+  <h3>{{name}}</h3>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "DialogHead",
   computed: {
-    head() {
-      return this.$store.state.selectedNode.name;
-    }
+    ...mapGetters(["name"])
   }
 };
 </script>
