@@ -21,7 +21,6 @@ export default {
 
 <style>
 .content {
-  float: right;
   width: 75%;
 }
 </style>

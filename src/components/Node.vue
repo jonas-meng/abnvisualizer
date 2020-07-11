@@ -1,13 +1,12 @@
 <template>
   <li>
-    <span class="tf-nc" :class="{selected: selected}" @click="selectNode(node)">{{node.name}}</span>
+    <span class="node" :class="{selected: selected}" @click="selectNode(node)">{{node.name}}</span>
     <ul v-if="node.children && node.children.length > 0">
       <Node
         v-for="child in node.children"
         :node="child"
         :selectedNode="selectedNode"
         :key="child.id"
-        @select-node="selectNode"
       ></Node>
     </ul>
   </li>
@@ -40,7 +39,40 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$node_gap: 20px;
+$vertical_connector_width: 2px;
+
+.node {
+  border: 1px solid black;
+  padding: 10px 10px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    height: $node_gap/2;
+    border-left: $vertical_connector_width solid black;
+    left: calc(50% - #{$vertical_connector_width/2});
+    top: -$node_gap/2;
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    height: $node_gap/2;
+    border-left: $vertical_connector_width solid black;
+    left: calc(50% - #{$vertical_connector_width/2});
+    bottom: -$node_gap/2;
+    content: "";
+  }
+
+  &:only-child::after {
+    display: none;
+  }
+}
+
 .selected {
   background-color: red;
 }

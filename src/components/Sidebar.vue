@@ -17,7 +17,6 @@ export default {
 
 <style>
 .sidebar {
-  float: left;
   width: 23%;
 }
 </style>
