@@ -37,7 +37,7 @@ var DataHierarchy = (data) => {
     return findChildren(root, data);
 }
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
     if (!data) {
         console.log('fetching data from mongodb');
         data = await fetchData();

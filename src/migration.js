@@ -1,4 +1,5 @@
 const Node = require('./db').Node;
+const process = require('process');
 
 var rawData = {
     "data": [
@@ -60,7 +61,7 @@ function preprocess(rawData) {
 
 console.log('data migration starts');
 var nodes = preprocess(rawData);
-Node.insertMany(nodes, (err, result) => {
+Node.insertMany(nodes, (err) => {
     if (err) {
         console.log('data migration failed!')
         console.log(err);
@@ -69,4 +70,3 @@ Node.insertMany(nodes, (err, result) => {
     }
     process.exit();
 });
-
