@@ -40,8 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$node_gap: 20px;
-$vertical_connector_width: 2px;
+@import "../assets/css/variables.scss";
 
 .node {
   border: 1px solid black;

@@ -26,9 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-$node_gap: 20px;
-$horizontal_connector_width: 2px;
-$vertical_connector_width: 2px;
+@import "../assets/css/variables.scss";
 
 .tree {
   * {
