@@ -42,18 +42,22 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/css/variables.scss";
 
+$node_border_radius: 10px 0;
+$node_padding: 10px 10px;
+
 .node {
+  border-radius: $node_border_radius;
   border: 1px solid black;
-  padding: 10px 10px;
+  padding: $node_padding;
   position: relative;
 
   &::before {
     position: absolute;
     display: block;
-    height: $node_gap/2;
+    height: $node_gap/2 + $horizontal_connector_width;
     border-left: $vertical_connector_width solid black;
     left: calc(50% - #{$vertical_connector_width/2});
-    top: -$node_gap/2;
+    top: -$node_gap/2 - $horizontal_connector_width;
     content: "";
   }
 
@@ -73,6 +77,6 @@ export default {
 }
 
 .selected {
-  background-color: red;
+  border-color: red;
 }
 </style>
