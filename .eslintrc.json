@@ -1,27 +1,20 @@
 {
     "env": {
         "browser": true,
-        "node": true,
-        "commonjs": true,
-        "es2020": true
+        "es2020": true,
+        "node": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:vue/essential"
     ],
     "parserOptions": {
-        "ecmaVersion": 11
+        "ecmaVersion": 11,
+        "sourceType": "module"
     },
     "plugins": [
         "vue"
     ],
-    "overrides": [
-        {
-            "files": [
-                "src/**/*.js",
-                "src/**/*.vue"
-            ]
-        }
-    ],
-    "rules": {}
+    "rules": {
+    }
 }
